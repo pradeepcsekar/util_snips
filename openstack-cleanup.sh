@@ -12,7 +12,7 @@ echo "Deleting nova VMs "
 echo "=================="
 for i in $(nova list | awk  '{print $2}' | grep -vi id ); do  nova delete  $i; done
 
-echo "Existing neutron pors: " 
+echo "Existing neutron ports: " 
 echo "======================"
 neutron port-list
 echo ""
