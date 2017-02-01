@@ -1,0 +1,9 @@
+# To quickly fix the known_hosts file by removing the offending key
+# Here 62 is the line number that has the offending key. 
+sed -if '62d' ~/.ssh/known_hosts
+
+
+# Remote sync (rsync) the source and destination dir
+# for every 1 second
+# make sure to setup passwordless ssh
+watch -n 1 "rsync --stats -chavzP <source_dir> <user>@<ip>:<dest_dir>"
