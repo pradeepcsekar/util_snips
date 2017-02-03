@@ -2,6 +2,8 @@
 # Here 62 is the line number that has the offending key. 
 sed -if '62d' ~/.ssh/known_hosts
 
+# Finding the hostname or FQDN
+echo `uname -n`.`awk '/^domain/ {print $2}' /etc/resolv.conf`
 
 # Remote sync (rsync) the source and destination dir
 # for every 1 second
